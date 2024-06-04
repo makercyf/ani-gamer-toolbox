@@ -213,9 +213,34 @@
 	if (GM_getValue('hideadskip')) {
 	  adskip.hide();
 	}
+	
+	var speed1x = $('<a>').on('click', function (e) {
+		e.preventDefault();
+		document.getElementsByTagName("video")[0].playbackRate = 1
+	}).text('影片正常速度').addClass('anig-tb');
+
+	var speed15x = $('<a>').on('click', function (e) {
+		e.preventDefault();
+		document.getElementsByTagName("video")[0].playbackRate = 1.5
+	}).text('影片1.5倍速').addClass('anig-tb');
+
+	var speed2x = $('<a>').on('click', function (e) {
+		e.preventDefault();
+		document.getElementsByTagName("video")[0].playbackRate = 2
+	}).text('影片2倍速').addClass('anig-tb');
+
+	var speed3x = $('<a>').on('click', function (e) {
+		e.preventDefault();
+		document.getElementsByTagName("video")[0].playbackRate = 3
+	}).text('影片3倍速').addClass('anig-tb');
+
+	var speed4x = $('<a>').on('click', function (e) {
+		e.preventDefault();
+		document.getElementsByTagName("video")[0].playbackRate = 4
+	}).text('影片4倍速').addClass('anig-tb');
 
 	var $ct = $('<div>').addClass('anig-ct');
-	$ct.append(exportdanmu).append(showans).append(fetchans).append(answerans).append(adskip);
+	$ct.append(exportdanmu).append().append(fetchans).append(answerans).append(adskip).append(speed1x).append(speed15x).append(speed2x).append(speed3x).append(speed4x);
 	$('.anime_name').append($ct).append(m3u8container);
 
 	function styleInject(css, ref) {
@@ -245,7 +270,7 @@
 	  }
 	}
 
-	var css = ".anig-ct {\r\n\tdisplay: flex;\r\n\twidth: 100%;\r\n\tmargin: 5px;\r\n}\r\n\r\n.anig-tb {\r\n\tdisplay: inline-block;\r\n\tpadding: 5px;\r\n\tbackground: #00B4D8;\r\n\tcolor: #FFF;\r\n\tmargin-right: 5px;\r\n\tborder: 1px solid #BBB;\r\n}\r\n\r\n.tdn{\r\n\ttext-decoration: none;\r\n}\r\n";
+	var css = ".anig-ct {\r\n\tdisplay: flex;\r\n\twidth: 100%;\r\n\tmargin: 5px;\r\n}\r\n\r\n.anig-tb {\r\n\tdisplay: inline-block;\r\n\tpadding: 5px;\r\n\tbackground: #00B4D8;\r\n\tcolor: #FFF;\r\n\tmargin-right: 5px;\r\n\tborder: 1px solid #BBB;\r\n  cursor: pointer;\r\n}\r\n\r\n.tdn{\r\n\ttext-decoration: none;\r\n}\r\n";
 	styleInject(css);
 
 }());
